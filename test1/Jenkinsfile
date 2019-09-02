@@ -1,0 +1,9 @@
+pipeline {
+    stages {
+        stage('输出') {
+            steps{
+                echo '这里是/test1/下'
+            }
+        }
+    }
+}
