@@ -22,14 +22,16 @@ pipeline {
             }
         }
     }
-    post {
+    post { //这里定义的是后置处理
         success {
             // 构建成功
-            echo '构建完成'
+            echo '构建完成，正在清理工作空间'
+            cleanWs();
+            echo '清理工作空间完成'
         }
         failure {
-            // 构建失败
-            echo '构建失败'
+            // 构建失败，这里使用sh是因为echo不支持使用参数
+            sh 'echo "构建失败，详情请查看$WORKSPACE"'
         }
         aborted {
             // 构建被中止
