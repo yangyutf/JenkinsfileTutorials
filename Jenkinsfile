@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh 'echo "进入目录前：$PWD"'
                 dir('demo') { //切换目录到demo
-                    sh 'echo "进入目录后：$PWD"'
                     //执行构建镜像命令，这里起作用的是maven的插件
                     //可以参考https://github.com/hellxz/SpringBoot-DockerDemo.git的使用方法，在docker-maven-plugin-2分支
                     sh 'mvn clean package docker:build -DskipTests'  
