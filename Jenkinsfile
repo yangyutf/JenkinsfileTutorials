@@ -4,7 +4,7 @@ pipeline {
         stage('Pull Git Demo') {
             steps{
 		//拉取代码
-            	git 'https://github.com/hellxz/springboot-demo1.git'
+            	git 'https://github.com/yangyutf/springboot-demo1.git'
             }
         }
    }
